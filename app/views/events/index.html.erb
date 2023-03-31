@@ -1,9 +1,9 @@
 <h1>Events : </h1>
 
-<% @events.each do |e| %>
-    <ol>
-        <li> 
-          <%= e.date %>, <%= e.location %>
-        </li>
-    </ol>    
-<% end %>
+<ol>
+  <% @events.each do |e| %>
+      <li>
+        <%= e.date %>, <%= e.location %>
+      </li>
+  <% end %>
+</ol>
