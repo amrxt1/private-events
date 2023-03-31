@@ -4,6 +4,7 @@
   <% @events.each do |e| %>
       <li>
         <%= e.date %>, <%= e.location %>
+        <p>Hosted by : <strong><%= e.creator.email %></strong> </p>
       </li>
   <% end %>
 </ol>
