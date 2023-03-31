@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "events#index"
   resources :events
+  get "/users" ,to: "users#show"
+  get '/users/:id', to: 'users#show'
 end
