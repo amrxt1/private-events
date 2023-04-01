@@ -3,8 +3,10 @@
 <ol>
   <% @events.each do |e| %>
       <li>
-        <%= e.date %>, <%= e.location %>
-        <p>Hosted by : <strong><%= e.creator.email %></strong> </p>
+        <strong><%= e.name %></strong> <br>
+        <%= e.date %>, <em><%= e.location %></em> <br>
+        Hosted by : <strong><%= e.creator.name %></strong> <br>
+        <strong><%= link_to "Details Here", event_path(e) %></strong> <br>
       </li>
   <% end %>
 </ol>
