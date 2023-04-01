@@ -1,12 +1,48 @@
-<h1>Events : </h1>
 
-<ol>
-  <% @events.each do |e| %>
-      <li>
-        <strong><%= e.name %></strong> <br>
-        <%= e.date %>, <em><%= e.location %></em> <br>
-        Hosted by : <strong><%= e.creator.name %></strong> <br>
-        <strong><%= link_to "Details Here", event_path(e) %></strong> <br>
-      </li>
-  <% end %>
-</ol>
+
+<% if @today.any?%>
+  <h2>Events Today</h2>
+
+  <ol>
+    <% @today.each do |e| %>
+        <li>
+          <strong><%= e.name %></strong> <br>
+          <%= e.date %>, <em><%= e.location %></em> <br>
+          Hosted by : <strong><%= e.creator.name %></strong> <br>
+          <strong><%= link_to "Details Here", event_path(e) %></strong> <br>
+        </li>
+    <% end %>
+  </ol>
+
+<% end %>
+
+
+<% if @events_future.any?%>
+  <h2>Upcoming Events</h2>
+
+  <ol>
+    <% @events_future.each do |e| %>
+        <li>
+          <strong><%= e.name %></strong> <br>
+          <%= e.date %>, <em><%= e.location %></em> <br>
+          Hosted by : <strong><%= e.creator.name %></strong> <br>
+          <strong><%= link_to "Details Here", event_path(e) %></strong> <br>
+        </li>
+    <% end %>
+  </ol>
+
+<% end %>
+
+<%if @events_past.any?%>
+  <h2>Previous Events</h2>
+  <ol>
+    <% @events_past.each do |e| %>
+        <li>
+          <strong><%= e.name %></strong> <br>
+          <%= e.date %>, <em><%= e.location %></em> <br>
+          Hosted by : <strong><%= e.creator.name %></strong> <br>
+          <strong><%= link_to "Details Here", event_path(e) %></strong> <br>
+        </li>
+    <% end %>
+  </ol>
+<% end %>
