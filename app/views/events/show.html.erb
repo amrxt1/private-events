@@ -4,3 +4,14 @@
 Hosted by : <strong><%= @event.creator.name %></strong> <br>
 <strong><%= link_to "Click Here to Attend", new_attendance_path(event_id: @event.id)%></strong> <br>
 <p> <strong>Description :</strong> <%= @event.description %> </p>
+
+<% if @event.attendees %>
+    <h3>List of attendees </h3>
+        <ul>
+            <% @event.attendees.each do |a| %>
+                <li> <%= a.name %> </li>
+            <% end %>
+        </ul>
+<% else %>
+    <h4>No attendees yet</h4>
+<% end %>

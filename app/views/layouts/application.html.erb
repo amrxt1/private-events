@@ -16,6 +16,8 @@
     <%if user_signed_in? %>
       <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
       <%= link_to "Create Event", new_event_path %>
+      <%= link_to "All Events", events_path%>
+      <%= link_to "Events by You", user_path(current_user)%>
     <%else%>
       <%= link_to "Sign In", new_user_session_path%>
       <%= link_to "Register",new_user_registration_path%>
